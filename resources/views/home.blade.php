@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Anda Normies..!!!
+                    Anda Sudah Mencoblos..!!!
                 </div>
             </div>
         </div>

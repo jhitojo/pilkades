@@ -14,6 +14,9 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
+
+    //Calon Kades
+
     public function tambahCalon()
     {
     	# code...
@@ -93,5 +96,93 @@ class AdminController extends Controller
 
         return redirect('/admin/home');
     }
+
+        public function KotakSuara()
+    {
+        
+        $calon = DB::table('calon_kades')->get();
+
+        return view('admin.kotak', ['calon' => $calon]);
+    }
+
+
+    //Pemilih
+
+    public function tambahPemilih()
+    {
+        # code...
+
+        return view('pemilih.tambah');
+    }
+
+     public function store(Request $request)
+    {
+        DB::table('users')->insert([
+            'name' => $request->name,
+            'nik' => $request->nik,
+            'tempat_lahir' => $request->tempatLahir,
+            'tanggal_lahir' => $request->tanggalLahir,
+            'kelamin' => $request->kelamin,
+            'agama' => $request->agama,
+            'pekerjaan' => $request->pekerjaan,
+            'pendidikan' => $request->pendidikan,
+            'email' => $request->email,
+            'is_admin' => $request->is_admin,
+            'surat_suara' => $request->surat_suara,
+            'password' => bcrypt($request->password),
+        ]);
+
+        return redirect('/admin/home');
+    }
+
+    public function listPemilih()
+    {
+        $pemilih = DB::table('users')->get();
+
+        return view('pemilih.list', ['pemilih' => $pemilih]);
+    }
+
+    public function editPemilih($id)
+    {
+        $pemilih = DB::table('users')->where('id',$id)->get();
+
+        return view('pemilih.edit', ['pemilih' => $pemilih]);
+    }
+
+    public function updatePemilih(Request $request)
+    {
+        DB::table('users')->where('id',$request->id)->update([
+            'name' => $request->name,
+            'nik' => $request->nik,
+            'tempat_lahir' => $request->tempatLahir,
+            'tanggal_lahir' => $request->tanggalLahir,
+            'kelamin' => $request->kelamin,
+            'agama' => $request->agama,
+            'pekerjaan' => $request->pekerjaan,
+            'pendidikan' => $request->pendidikan,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            
+        ]);
+        return redirect('/admin/home');
+    }
+
+    public function detailsPemilih($id)
+    {
+        $pemilih = DB::table('users')->where('id',$id)->get();
+
+        return view('pemilih.details', ['pemilih' => $pemilih]);
+    }
+
+    public function hapusPemilih($id)
+    {
+        
+        DB::table('users')->where('id',$id)->delete();
+
+        return redirect('/admin/home');
+    }
+
+
+
 
 }

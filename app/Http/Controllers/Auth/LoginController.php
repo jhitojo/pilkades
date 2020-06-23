@@ -65,7 +65,11 @@ class LoginController extends Controller
 
                 return redirect()->route('admin.home');
 
-            }else{
+            }elseif (auth()->user()->surat_suara == 0) {
+
+                return redirect()->route('adminHome');
+
+            }elseif (auth()->user()->surat_suara == 1) {
 
                 return redirect()->route('home');
 

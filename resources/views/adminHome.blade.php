@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Anda Admin..!!!
+                    Anda Belum Mencoblos..!!!
                 </div>
             </div>
         </div>

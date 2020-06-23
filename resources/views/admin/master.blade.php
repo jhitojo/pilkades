@@ -138,6 +138,33 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/admin/kotak" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Kotak Suara
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/pemilih/tambah" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Tambah Pemilih
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/pemilih/list" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                List Pemilih
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

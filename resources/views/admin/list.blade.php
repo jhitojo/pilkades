@@ -55,9 +55,9 @@
                         <td>{{ $p->organisasi }}</td>
                         <td><img class="center" alt="image" height="200" width="300" src="\img\foto_kades\{{ $p->foto }}"></td>
                         <td>
-                          <a href="calon/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Edit</a>
-                          <a href="calon/details/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Details</a>
-                          <a href="calon/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a>
+                          <a href="/admin/calon/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Edit</a>
+                          <a href="/admin/calon/details/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Details</a>
+                          <a href="/admin/calon/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a>
                         </td>
                       </tr>
                       @endforeach
