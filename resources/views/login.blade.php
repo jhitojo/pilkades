@@ -9,7 +9,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>E-voting Pilkades</title>
+  <link rel="icon" href="/landing/images/favicon.png">
 
   <!-- Custom fonts for this template-->
   <link href="form_login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -43,7 +44,7 @@
                   <div class="text-center">
                     <span>
                     <img src="/landing/images/LOGOO.svg" alt="alternative" width="15%">
-                    <h1 class="h4 text-gray-900 mb-4">LOGIN</h1></span>
+                    <h1 class="h4 text-gray-900 mb-4">Silahkan Login</h1></span>
                   </div>
                   <form class="user" action="{{ route('login') }}" method="POST">
                   @csrf
