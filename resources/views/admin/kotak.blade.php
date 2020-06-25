@@ -14,9 +14,46 @@
 
     <!-- Main content -->
     <section class="content">
-
+    <div class="row justify-content-center">
+    @foreach($calon as $p)
+    <div class="card mr-5" style="width: 20rem;">
+      <img class="card-img-top" src="/img/foto_kades/{{ $p->foto }}" alt="Card image cap">
+      <div class="card-body">
+      <table class="">
+        <tr class="">
+          <td>Nama </td>
+          <td> : {{ $p->nama_calon }}</td>
+        </tr>
+        <tr class="">
+          <td>Agama </td>
+          <td> : {{ $p->agama }}</td>
+        </tr>
+        <tr class="">
+          <td>Organisasi </td>
+          <td> : {{ $p->organisasi }}</td>
+        </tr>
+        <tr class="">
+          <td class"text-right">Jenis Kelamin </td>
+          <td> : {{ $p->kelamin }}</td>
+        </tr>
+        <tr class="">
+          <td>Jumlah Suara </td>
+          <td>  <h2> <span class="badge badge-success">{{ $p->jumlah_suara }}</span> </h2></td>
+        </tr>
+      </table>
+        <!-- <p class="card-text">
+        Nama          : {{ $p->nama_calon }} <br> 
+        Agama         : {{ $p->agama }} <br>  
+        Organisasi    : {{ $p->organisasi }} <br>
+        Jenis Kelamin : {{ $p->kelamin }} <br> 
+        <h4>Jumlah Suara <span class="badge badge-success">{{ $p->jumlah_suara }}</span></h4>
+         </p> -->
+      </div>
+    </div>  
+    @endforeach
+    </div>
       <!-- Default box -->
-      <div class="card card-solid">
+      <!-- <div class="card card-solid">
         <div class="card-body">
           <div class="row">
             @foreach($calon as $p)
@@ -58,8 +95,8 @@
           </div>
         </div>
         @endforeach
-        <!-- /.card-body -->
-      </div>
+        /.card-body
+      </div> -->
       <!-- /.card -->
 
     </section>
