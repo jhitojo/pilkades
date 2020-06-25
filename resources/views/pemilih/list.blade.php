@@ -1,6 +1,11 @@
 @extends('admin.master')
 
 @section('content')    
+
+<!-- datatable -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -10,7 +15,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Product</li>
+              <li class="breadcrumb-item active">Pemilih</li>
             </ol>
           </div>
         </div>
@@ -23,7 +28,7 @@
         <div class="col-12">
           <div class="card card-success">
             <div class="card-header">
-              <h3 class="card-title">Data Product</h3>
+              <h3 class="card-title">Data Pemilih</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -57,6 +62,8 @@
                         <td>
                           <a href="/admin/pemilih/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Edit</a>
                           <a href="/admin/pemilih/details/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Details</a>
+                          <!-- <a href="#.'/admin/pemilih/hapus/{{ $p->id }}'." class="linkHapusUser btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a> -->
+                          
                           <a href="/admin/pemilih/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a>
                         </td>
                       </tr>
@@ -94,4 +101,16 @@
       </div>
       <!-- /.row -->
     </section>
+
+<!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> -->
+
+<!-- <script type="text/javascript">
+  $(document).ready(function() {
+      $('#example2').DataTable();
+  } );
+</script> -->
+
 @endsection
+
