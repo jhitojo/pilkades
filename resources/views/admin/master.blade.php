@@ -24,6 +24,8 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -198,6 +200,8 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+
+
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
@@ -226,6 +230,7 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript">
         function loadMenu(url) {
             $.ajax(url,{
@@ -244,5 +249,35 @@
             
         }
     </script>
+=======
+<!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> -->
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- <script type="text/javascript">
+  $(document).ready(function() {
+      $('#example2').DataTable();
+  } );
+</script> -->
+>>>>>>> e988f1d71056175d5fc08b82115019466c7a1426
 </body>
+
+<!-- insert ajax -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".tombol-simpan").click(function(){
+			var data = $('.form-user').serialize();
+			$.ajax({
+				type: 'POST',
+				url: "aksi.php",
+				data: data,
+				success: function() {
+					$('.tampildata').load("tampil.php");
+				}
+			});
+		});
+	});
+	</script>
+
 </html>
