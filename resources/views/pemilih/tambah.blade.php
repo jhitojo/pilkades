@@ -34,7 +34,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-12">
-                  <form action="/admin/pemilih/store" method="post"  enctype="multipart/form-data">
+                  <form action="/admin/pemilih/add" method="post"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="row">
                       <div class="col-md-6">
