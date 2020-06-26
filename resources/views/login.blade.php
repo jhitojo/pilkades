@@ -13,11 +13,11 @@
   <link rel="icon" href="/landing/images/favicon.png">
 
   <!-- Custom fonts for this template-->
-  <link href="form_login/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="evoting/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="form_login/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="evoting/css/evoting.min.css" rel="stylesheet">
 
 </head>
 
@@ -97,14 +97,14 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="form_login/vendor/jquery/jquery.min.js"></script>
-  <script src="form_login/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="evoting/vendor/jquery/jquery.min.js"></script>
+  <script src="evoting/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="form_login/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="evoting/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="form_login/js/sb-admin-2.min.js"></script>
+  <script src="evoting/js/evoting.min.js"></script>
 
 </body>
 
