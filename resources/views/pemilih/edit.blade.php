@@ -42,11 +42,13 @@
                   @foreach($pemilih as $p)
                   <form action="/admin/pemilih/store" method="post"  enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    <div class="row">
-                     <div class="form-group">
+                  <div class="row">
+                    
+                    <div class="form-group">
                       <input type="hidden" name="id" class="form-control" value="{{$p->id}}" required="required">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
+                    <div class="form-group">
                       <label for="name">Nama Lengkap</label>
                       <input type="text" name="name" class="form-control" value="{{$p->name}}" required="required">
                     </div>
@@ -69,6 +71,8 @@
                         <option value="Perempuan">Perempuan</option>
                       </select>
                     </div>
+                    </div>
+                    <div class="col-sm-6">
                     <div class="form-group">
                       <label for="agama">Agama</label>
                       <select name="agama" class="form-control" value="{{$p->agama}}" required="required" >
@@ -95,11 +99,8 @@
                       <label for="password">Password</label>
                       <input type="text" name="password" class="form-control" value="{{$p->password}}" >
                     </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-6">
-
-
                 </div>
               </div>
 
