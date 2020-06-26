@@ -1,15 +1,20 @@
 @extends('admin.master')
 
+@section('title', 'Edit Pemilih')
+
+
 @section('content')    
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Edit Pemilih</h1>
+      <h4><strong>Edit Pemilih</strong></h4>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
+          <li class="breadcrumb-item active"><a href="/admin/pemilih/list">List Pemilih</a></li>
+          <li class="breadcrumb-item active">Edit Pemilih</li>
         </ol>
       </div>
     </div>
@@ -21,9 +26,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <div class="card card-primary">
+        <div class="card card-info">
           <div class="card-header">
-            <h3 class="card-title">Tambah Pemilih</h3>
+            <h3 class="card-title">Edit Pemilih</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -103,7 +108,7 @@
                       <input type="file" name="file">
                     </div> -->
                     <div class="modal-footer">
-                      <button class="btn btn-success" type="submit" value="upload"> Comfirm</button>
+                      <button class="btn btn-success" type="submit" value="upload"> Confirm</button>
                       <button type="reset" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
                     </div>
                   </form>
@@ -111,20 +116,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
-
-            </table>
           </div>
           <!-- /.card-body -->
         </div>

@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ config('app.name', 'Dashboard Admin') }}</title>
+  <title>@yield('title')</title> 
+  <link rel="icon" href="/landing/images/favicon.png">
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -17,6 +19,10 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!--Ajax  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -89,12 +95,11 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/admin/home" class="brand-link">
-      <img src="/img/AdminLTELogo.png"
-           alt="AdminLTE Logo"
-           class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a href="/admin/home" class="brand-link text-center">
+    <img src="/landing/images/LOGOO.svg" alt="evoting Logo" width="50%">
+           <!-- class="brand-image img-circle elevation-3" -->
+           <!-- style="opacity: .8"> -->
+      <!-- <span class="brand-text font-weight-light">AdminLTE 3</span> -->
     </a>
 
     <!-- Sidebar -->
@@ -111,10 +116,10 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul id="nav" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="{{ Request::path() === 'admin/home' ? 'nav-item nav-link active' : ''}}">
+    <li class="{{ Request::path() === 'admin/home' ? ' nav-item nav-link active' : ''}}">
             <a href="/admin/home" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -122,7 +127,7 @@
               </p>
             </a>
           </li>
-          <li class="{{ Request::path() === 'admin/tambah' ? 'nav-item nav-link active' : ''}}">
+          <li class="{{ Request::path() === 'admin/tambah' ? ' nav-item nav-link active' : ''}}">
             <a  href="/admin/tambah" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -147,14 +152,14 @@
             </a>
           </li>
           <li class="{{ Request::path() === 'admin/pemilih/tambah' ? ' nav-item nav-link active' : ''}}">
-            <a href="/admin/pemilih/tambah" class="nav-link">
+            <a href="/admin/pemilih/tambah" class="nav-link" >
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Tambah Pemilih
               </p>
             </a>
           </li>
-          <li class="{{ Request::path() === 'admin/pemilih/list' ? ' nav-item nav-link active' : ''}}">
+         <li class="{{ Request::path() === 'admin/pemilih/list' ? 'nav-item nav-link active' : ''}}">
             <a href="/admin/pemilih/list" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -178,9 +183,9 @@
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.2
+      <b>Version</b> beta
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2020 <a href="#">E-voting Pilkades</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -193,9 +198,9 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -203,53 +208,33 @@
 
 
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
+<script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>
 <!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 <!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
+<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<<<<<<< HEAD
-<script type="text/javascript">
-        function loadMenu(url) {
-            $.ajax(url,{
-                type: 'GET',
-                success: function (data, status, xhr) {
-                    var objData = JSON.parse(data);
-
-                    $('#kontenTemplate').html(objData.konten);
-                    $('title').html(objData.titel);
- 
-                }, 
-                error: function (jqXHR, textStatus, errorMsg){
-                    alert('Error : ' + errorMsg);
-                }
-            })  
-            
-        }
-    </script>
-=======
+<script src="{{ asset('dist/js/demo.js') }}"></script>
 <!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> -->
@@ -259,7 +244,6 @@
       $('#example2').DataTable();
   } );
 </script> -->
->>>>>>> e988f1d71056175d5fc08b82115019466c7a1426
 </body>
 
 <!-- insert ajax -->

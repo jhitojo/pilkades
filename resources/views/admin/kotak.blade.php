@@ -1,12 +1,20 @@
 @extends('admin.master')
 
+@section('title', 'Kotak Suara')
+
 @section('content')     
 
         <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Calon Kades</h1>
+          <h4><strong>Calon Kades</strong></h4>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
+              <li class="breadcrumb-item active">Calon Kades</li>
+            </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -16,7 +24,7 @@
     <section class="content">
     <div class="row justify-content-center">
     @foreach($calon as $p)
-    <div class="card mr-5" style="width: 20rem;">
+    <div class="card mr-2 ml-2" style="width: 20rem;">
       <img class="card-img-top" src="/img/foto_kades/{{ $p->foto }}" alt="Card image cap">
       <div class="card-body">
       <table class="">
@@ -33,7 +41,7 @@
           <td> : {{ $p->organisasi }}</td>
         </tr>
         <tr class="">
-          <td class"text-right">Jenis Kelamin </td>
+          <td>Jenis Kelamin </td>
           <td> : {{ $p->kelamin }}</td>
         </tr>
         <tr class="">

@@ -132,6 +132,11 @@ class AdminController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
+        // AdminController::tambahPemilih($request->all());
+        // return json_encode(array(
+        //     "statusCode"=>200
+        // ));
+
         return redirect('/admin/home');
     }
 

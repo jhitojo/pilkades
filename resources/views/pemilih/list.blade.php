@@ -1,5 +1,7 @@
 @extends('admin.master')
 
+@section('title', 'List Pemilih')
+
 @section('content')    
 
 <!-- datatable -->
@@ -10,12 +12,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Product</h1>
+          <h4><strong>List Pemilih</strong></h4>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Pemilih</li>
+              <li class="breadcrumb-item active">List Pemilih</li>
             </ol>
           </div>
         </div>
@@ -26,7 +28,7 @@
     <section class="content">
       <div class="row">
         <div class="col-12">
-          <div class="card card-success">
+          <div class="card card-info">
             <div class="card-header">
               <h3 class="card-title">Data Pemilih</h3>
             </div>
@@ -60,11 +62,11 @@
                         <td>{{ $p->pekerjaan }}</td>
                         <td>{{ $p->email }}</td>
                         <td>
-                          <a href="/admin/pemilih/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Edit</a>
-                          <a href="/admin/pemilih/details/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"><i class="fa fa-bars"></i>Details</a>
+                          <a href="/admin/pemilih/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"></i>Edit</a>
+                          <a href="/admin/pemilih/details/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-warning shadow-sm"></i>Detail</a>
                           <!-- <a href="#.'/admin/pemilih/hapus/{{ $p->id }}'." class="linkHapusUser btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a> -->
                           
-                          <a href="/admin/pemilih/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"><i class="fa fa-trash"></i>Delete</a>
+                          <a href="/admin/pemilih/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"></i>Delete</a>
                         </td>
                       </tr>
                       @endforeach
@@ -72,30 +74,10 @@
                   </table>    
                 </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-12 col-md-5">
-                  <div class="dataTables_info" id="example2_info" role="status" arial-live="polite">Showing 1 to  10 of 57 enteries</div>
-                  </div>
-                </div>
               </div>
             </div>
             <!-- /.card-body -->
           </div>
-          <!-- /.card -->
-
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
-                
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
         </div>
         <!-- /.col -->
       </div>
