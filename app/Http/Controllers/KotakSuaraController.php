@@ -24,7 +24,7 @@ class KotakSuaraController extends Controller
     	$calon = DB::table('calon_kades')->get();
     	$suara = DB::table('kotak_suara')->get();
 
-    	return view('kotakSuara.vote', ['calon' => $calon, 'suara' => $suara]);
+    	return view('kotakSuara.voting', ['calon' => $calon, 'suara' => $suara]);
     }
 
      public function vote(Request $request)
