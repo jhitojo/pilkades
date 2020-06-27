@@ -53,9 +53,11 @@
                         <td>{{ $p->organisasi }}</td>
                         <td><img class="center" alt="image" height="200" width="300" src="\img\foto_kades\{{ $p->foto }}"></td>
                         <td>
-                          <a href="/admin/calon/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm"></i>Edit</a>
-                          <a href="/admin/calon/details/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-warning shadow-sm"></i>Detail</a>
-                          <a href="/admin/calon/hapus/{{ $p->id }}" class="btn btn-danger btn-sm delete-link"></i>Delete</a>
+                          <a href="/admin/calon/edit/{{ $p->id }}" class="open_modal_ubah btn btn-sm btn-primary shadow-sm">Edit</a>
+                          <a href="/admin/calon/details/{{ $p->id }}" id="details" class="open_modal_ubah btn btn-sm btn-warning shadow-sm">Detail</a>
+                          <!-- <a href="/admin/calon/details/{{ $p->id }}" id="details" class="btn btn-sm btn-warning shadow-sm">Detail</a> -->
+                          <a href="/admin/calon/hapus/{{ $p->id }}" id="hapus" class="btn btn-danger btn-sm delete-link"></i>Delete</a>
+                          <!-- <a href="#" id="hapuslur" class="btn btn-danger btn-sm delete-link">Delete</a> -->
                         </td>
                       </tr>
                       @endforeach
@@ -72,4 +74,6 @@
       </div>
       <!-- /.row -->
     </section>
+</script>
+   
 @endsection

@@ -2,7 +2,7 @@
 
 @section('title', 'Detail Calon Kades')
 
-@section('content')     
+@section('content') 
 
         <section class="content-header">
       <div class="container-fluid">
@@ -18,7 +18,8 @@
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->

@@ -20,6 +20,8 @@
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
 
+  <link rel="stylesheet" href="sweetalert2.min.css">
+
     <!--Ajax  -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -207,6 +209,9 @@
 </script>
 
 
+  <!-- sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
@@ -244,8 +249,48 @@
       $('#example2').DataTable();
   } );
 </script> -->
-</body>
+<!-- <script> 
+    $(document).ready(function(){
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+          },
+          buttonsStyling: false
+        })
+        $(document).on('click', '#hapuslur', function(){
+          swalWithBootstrapButtons.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Yes, delete it!',
+              cancelButtonText: 'No, cancel!',
+              reverseButtons: true
+            }).then((result) => {
+              if (result.value) {
+                swalWithBootstrapButtons.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+                )
+              } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+              ) {
+                swalWithBootstrapButtons.fire(
+                  'Cancelled',
+                  'Your imaginary file is safe :)',
+                  'error'
+                )
+              }
+            })
 
+        })
+    });
+    </script> -->
+</body>
+@include('_modal')
 <!-- insert ajax -->
 
 <script type="text/javascript">
@@ -262,6 +307,6 @@
 			});
 		});
 	});
-	</script>
+	</>
 
 </html>

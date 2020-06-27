@@ -94,12 +94,12 @@
                         <div class="form-group">
                           <label for="agama">Agama</label>
                           <select name="agama" class="form-control" value="{{$p->agama}}" required="required" >
-							  <option value="Islam">Islam</option>
-							  <option value="Kristen">Kristen</option>
-							  <option value="Hindu">Islam</option>
-							  <option value="Budha">Kristen</option>
-							  <option value="Katholik">Katholik</option>
-							</select>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Hindu">Islam</option>
+                            <option value="Budha">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                          </select>
                         </div>
                       </div>
                     </div>
