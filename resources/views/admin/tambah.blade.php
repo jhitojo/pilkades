@@ -2,8 +2,8 @@
 
 @section('title', 'Tambah Calon Kades')
 
-@section('content')    
-<section class="content-header">
+@section('content')
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6"></strong>
@@ -127,4 +127,5 @@
       </div>
       <!-- /.row -->
     </section>
+
 @endsection

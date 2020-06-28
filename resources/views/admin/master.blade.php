@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('title')</title> 
+  <title>@yield('title')</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" href="/landing/images/favicon.png">
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
   <!-- Scripts -->
-  <script src="{{ asset('js/app.js') }}" defer></script>
+  <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
-  <link rel="stylesheet" href="sweetalert2.min.css">
+  <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
 
     <!--Ajax  -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -32,8 +32,6 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -42,9 +40,6 @@
       <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Dashbord') }}
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -112,7 +107,8 @@
           <img src="/img/budi_setiawan.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Ainun Atmam Al Faruqi</a>
+          <!-- <a href="#" class="d-block">Ainun Atmam Al Faruqi</a> -->
+          <a href="#" class="d-block">Admin Pilkades</a>
         </div>
       </div>
 
@@ -121,7 +117,66 @@
         <ul id="nav" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-    <li class="{{ Request::path() === 'admin/home' ? ' nav-item nav-link active' : ''}}">
+          <li class="nav-item">
+            <a href="/admin/home" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/tambah" id="tambah" class="nav-link klik_menu">
+            <!-- <a href="#" id="tambah" class="nav-link klik_menu"> -->
+              <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                Tambah Calon
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/list" id="list" class="nav-link klik_menu">
+            <!-- <a href="#" id="list" class="nav-link klik_menu"> -->
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Daftar Calon
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/kotak" id="kotak"  class="nav-link klik_menu">
+            <!-- <a href="#" id="kotak"  class="nav-link klik_menu"> -->
+              <i class="nav-icon fas fa-balance-scale" ></i>
+              <p>
+                Kotak Suara
+                
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="/admin/pemilih/tambah" id="tambahpemilih" class="nav-link klik_menu">-->
+            <!-- <a href="#" id="tambahpemilih" class="nav-link klik_menu"> -->
+              <!-- <i class="nav-icon fas fa-address-card"></i> -->
+              <!-- <p>
+                Tambah Pemilih
+                
+              </p>
+            </a>
+          </li> --> 
+          <li class="nav-item">
+            <a href="/admin/pemilih/list" id="listpemilih" class="nav-link klik_menu">
+            <!-- <a href="#" id="listpemilih" class="nav-link klik_menu"> -->
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                List Pemilih
+                
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <!-- <li class="{{ Request::path() === 'admin/home' ? ' nav-item nav-link active' : ''}}">
             <a href="/admin/home" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -170,14 +225,15 @@
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
+
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper badan" id="kontenTemplate">
     <!-- Content Header (Page header) -->
     @yield('content')
   </div>
@@ -198,52 +254,46 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<script>
+// Code that uses other library's $ can follow here.
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+          $('ul li a').click(function(){
+            $('li a').removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+<!-- INI UNTUK KODE AJAX  -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<!-- <script type="text/javascript">
+  $(document).ready(function(){
+    $('.klik_menu').click(function(){
+      var menu = $(this).attr('id');
+      if(menu == "tambah"){
+        $('.badan').load('{{url('/admin/tambah')}}');           
+      }else if(menu == "list"){
+        $('.badan').load('{{url('/admin/list')}}');            
+      }else if(menu == "tambahpemilih"){
+        $('.badan').load('{{url('/admin/pemilih/tambah')}}');                      
+      }else if(menu == "listpemilih"){
+        $('.badan').load('{{url('/admin/pemilih/list')}}');           
+      }else if(menu == "kotak"){
+        $('.badan').load('{{url('/admin/kotak')}}');           
+      }
+    }); 
+
+    // halaman yang di load default pertama kali
+    // $('.badan').load('home');           
+ 
+  });
+
+
+</script> -->
 
 <!-- jQuery -->
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
 
-
-  <!-- sweetalert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-<!-- Bootstrap 4 -->
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- ChartJS -->
-<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
-<!-- Sparkline -->
-<script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>
-<!-- JQVMap -->
-<script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-<script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
-<!-- daterangepicker -->
-<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
-<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-<!-- Summernote -->
-<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
-<!-- overlayScrollbars -->
-<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('dist/js/adminlte.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js') }}"></script>
-<!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script> -->
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <!-- <script type="text/javascript">
   $(document).ready(function() {
       $('#example2').DataTable();
@@ -289,11 +339,11 @@
         })
     });
     </script> -->
+    @stack('scripts')
 </body>
-@include('_modal')
 <!-- insert ajax -->
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function(){
 		$(".tombol-simpan").click(function(){
 			var data = $('.form-user').serialize();
@@ -307,6 +357,6 @@
 			});
 		});
 	});
-	</>
+	</> -->
 
 </html>

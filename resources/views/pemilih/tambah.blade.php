@@ -2,7 +2,7 @@
 
 @section('title', 'Tambah Pemilih')
 
-@section('content')    
+@section('content')
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -189,4 +189,6 @@ $(document).ready(function() {
   });
 });
 </script> -->
+
+
 @endsection

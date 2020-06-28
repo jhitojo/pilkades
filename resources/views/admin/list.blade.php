@@ -2,13 +2,14 @@
 
 @section('title', 'Daftar Calon Kades')
 
-@section('content')    
+@section('content')
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
           <h4><strong>Daftar Calon Kades</strong></h4>
           </div>
+          
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
@@ -18,6 +19,21 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+            @if (session('delete'))
+                <div class="alert alert-danger">
+                    {{ session('delete') }}
+                </div>
+            @endif
+            @if (session('update'))
+                <div class="alert alert-primary">
+                    {{ session('update') }}
+                </div>
+            @endif
 
     <!-- Main content -->
     <section class="content">
